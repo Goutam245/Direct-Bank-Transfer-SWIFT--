@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Prominence Brand Palette */
+    --prominence-cyan: 191 100% 50%;
+    --prominence-cyan-light: 187 100% 50%;
+    --prominence-cyan-glow: 180 100% 50%;
+    --prominence-navy: 213 55% 10%;
+    --prominence-navy-deep: 210 63% 7%;
+    --prominence-navy-mid: 215 30% 16%;
+    --prominence-charcoal: 217 33% 17%;
+    --prominence-charcoal-dark: 220 39% 11%;
+
+    /* Semantic tokens */
+    --background: 0 0% 100%;
+    --foreground: 213 55% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 55% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 55% 10%;
+
+    --primary: 191 100% 50%;
+    --primary-foreground: 213 55% 10%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 213 55% 10%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 14% 47%;
+
+    --accent: 191 100% 50%;
+    --accent-foreground: 213 55% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 191 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Glow shadows */
+    --glow-cyan: 0 0 30px hsla(191, 100%, 50%, 0.4);
+    --glow-cyan-strong: 0 0 50px hsla(191, 100%, 50%, 0.5), 0 0 100px hsla(191, 100%, 50%, 0.2);
+    --glow-cyan-subtle: 0 0 20px hsla(191, 100%, 50%, 0.2);
+
+    /* Glass card for dark sections */
+    --glass-bg: hsla(0, 0%, 100%, 0.05);
+    --glass-border: hsla(191, 100%, 50%, 0.2);
+    --glass-border-hover: hsla(191, 100%, 50%, 0.5);
+
+    /* Gradients */
+    --gradient-navy: linear-gradient(180deg, hsl(210, 63%, 7%) 0%, hsl(213, 55%, 10%) 100%);
+    --gradient-light: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
+    --gradient-cyan: linear-gradient(135deg, hsl(191, 100%, 50%) 0%, hsl(187, 100%, 50%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glow-cyan {
+    box-shadow: var(--glow-cyan);
+  }
+  .glow-cyan-strong {
+    box-shadow: var(--glow-cyan-strong);
+  }
+  .glow-cyan-subtle {
+    box-shadow: var(--glow-cyan-subtle);
+  }
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  .glass-card:hover {
+    border-color: var(--glass-border-hover);
+  }
+  .text-glow {
+    text-shadow: 0 0 20px hsla(191, 100%, 50%, 0.5), 0 0 40px hsla(191, 100%, 50%, 0.2);
+  }
+  .bg-marble-dark {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .gradient-navy {
+    background: var(--gradient-navy);
+  }
+  .gradient-light {
+    background: var(--gradient-light);
+  }
+  .cyan-border-left {
+    border-left: 4px solid hsl(var(--prominence-cyan));
+  }
+}
